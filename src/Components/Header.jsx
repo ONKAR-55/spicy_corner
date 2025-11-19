@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
+import '../App.css'
 
 const NavItems = [
   { name: "Home", href: "#Home" },
@@ -60,7 +61,7 @@ function Header() {
         )}
       </AnimatePresence>
       <motion.header
-        className="border-b-2 w-97 md:w-full md:h-24 py-3 md:py-5 bg-white flex text-amber-500 items-center relative shadow-md z-20"
+        className="border-b-2 w-97 md:w-full md:h-24 py-3 md:py-5 bg-white flex text-amber-500 items-center relative shadow-md z-20 header"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}

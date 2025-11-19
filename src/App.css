@@ -7,3 +7,19 @@
   text-align: center;
   color: orange;
 }
+
+.home {
+  text-shadow: 5px 5px 100px #ff8b17;
+  box-shadow: 1px 1px 900px #FFC107;
+  padding: 10px;
+  border-radius: 30px;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  &&:hover {
+    box-shadow: 0 0 0;
+  }
+}
+
+.header {
+  box-shadow: 1px 1px 900px #FFC107;
+}
