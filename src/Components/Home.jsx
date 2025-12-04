@@ -5,7 +5,8 @@ import '../App.css'
 
 function Home() {
   return (
-    <motion.home
+    <motion.section
+      id="Home"
       className="h-150 w-full sm:pl-20 pl-2 bg-transparent flex items-center mt-10 ease-in-out gap-10"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: -3 }}
@@ -23,7 +24,7 @@ function Home() {
           <img src={pizza_round} alt="Pizza" />
          </motion.div>
 
-      </motion.home>
+      </motion.section>
   )
 }
 

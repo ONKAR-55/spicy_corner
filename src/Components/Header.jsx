@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import '../App.css'
@@ -6,9 +6,9 @@ import '../App.css'
 const NavItems = [
   { name: "Home", href: "#Home" },
   { name: "Menu", href: "#Menu" },
-  { name: "Contact Us", href: "#Contact Us" },
   { name: "Reservation", href: "#Reservation" },
   { name: "About Us", href: "#About Us" },
+  { name: "Contact Us", href: "#Contact Us" },
 ];
 
 function NavLinks({ isMobile, closeMenu }) {
@@ -27,12 +27,8 @@ function NavLinks({ isMobile, closeMenu }) {
             textDecoration: "underline",
             textDecorationColor: "#f59e0b",
           }}
-          whileTap={{ scale: 0.9 }}
-          className={
-            isMobile
-              ? "block p-4 bg-white border-b border-amber-500"
-              : "text-amber-400"
-          }
+          whileTap={{ scale: 0.9 }} 
+          className={ isMobile ? "block p-4 bg-white border-b border-amber-500" : "text-amber-400"}
           onClick={isMobile ? closeMenu : undefined}
         >
           {item.name}
@@ -44,6 +40,19 @@ function NavLinks({ isMobile, closeMenu }) {
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -61,7 +70,11 @@ function Header() {
         )}
       </AnimatePresence>
       <motion.header
-        className="border-b-2 w-97 md:w-full md:h-24 py-3 md:py-5 bg-white flex text-amber-500 items-center relative shadow-md z-20 header"
+        className={`border-b-2 w-97 md:w-full md:h-24 py-3 md:py-5 flex text-amber-500 items-center sticky top-0 shadow-lg z-20 header transition-all duration-300 ease-in-out ${
+          isScrolled 
+            ? "bg-black/80 backdrop-blur-md border-amber-500/50 shadow-none" 
+            : "bg-transparent border-transparent"
+        }`}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
