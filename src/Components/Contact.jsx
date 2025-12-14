@@ -3,9 +3,9 @@ import '../App.css';
 
 function Contact() {
     return (
-        <div id="Contact Us" className="container px-4 py-8 about-txt items-center justify-center">
+        <div id="Contact Us" className="container mx-auto px-4 py-8 about-txt items-center justify-center">
             <h1 className="text-4xl font-bold text-center mb-9 underline underline-offset-1">Contact Us</h1>
-            <div className="pl-8 flex gap-80 justify-center contact-section">
+            <div className="flex flex-col md:flex-row gap-10 md:gap-40 justify-center contact-section">
                 <div className="contact-info">
                     <div className="mb-7 contact">
                         <h2 className="text-2xl font-semibold ">Address</h2>

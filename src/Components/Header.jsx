@@ -28,7 +28,7 @@ function NavLinks({ isMobile, closeMenu }) {
             textDecorationColor: "#f59e0b",
           }}
           whileTap={{ scale: 0.9 }} 
-          className={ isMobile ? "block p-4 bg-white border-b border-amber-500" : "text-amber-400"}
+          className={ isMobile ? "block p-4 text-2xl text-amber-500 hover:text-amber-600" : "text-amber-400"}
           onClick={isMobile ? closeMenu : undefined}
         >
           {item.name}
@@ -70,7 +70,7 @@ function Header() {
         )}
       </AnimatePresence>
       <motion.header
-        className={`border-b-2 w-97 md:w-full md:h-24 py-3 md:py-5 flex text-amber-500 items-center sticky top-0 shadow-lg z-20 header transition-all duration-300 ease-in-out ${
+        className={`w-full md:h-24 py-3 md:py-5 flex text-amber-500 items-center md:sticky top-0 shadow-lg z-20 header transition-all duration-300 ease-in-out ${
           isScrolled 
             ? "bg-black/80 backdrop-blur-md border-amber-500/50 shadow-none" 
             : "bg-transparent border-transparent"
@@ -80,7 +80,7 @@ function Header() {
         transition={{ duration: 0.8 }}
       >
         <motion.h1
-          className="text-xl font-medium text-amber-500 ml-4 hover:text-amber-600 duration-200 ease-in md:text-2xl lg:text-3xl"
+          className="text-3xl font-medium text-amber-500 ml-4 hover:text-amber-600 duration-200 ease-in md:text-2xl lg:text-3xl"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9 }}
@@ -106,26 +106,29 @@ function Header() {
 
         {/* Mobile Menu Button */}
         <motion.button
-          className="md:hidden ml-auto mr-5 text-2xl text-amber-500"
+          className="md:hidden ml-auto mr-5 text-4xl text-amber-500"
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9 }}
           whileHover={{ scale: 1.2, color: "#f59e0b" }}
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          {menuOpen ? <X size={30} /> : <Menu size={30} />}
+          {menuOpen ? <X size={40} /> : <Menu size={40} />}
         </motion.button>
 
         {/* Mobile Menu Card*/}
         <AnimatePresence>
           {menuOpen && (
             <motion.nav
-              className="absolute top-full right-0 w-80 bg-white shadow-lg z-50"
-              initial={{ x: "100%", opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: "100%", opacity: 0 }}
+              className="fixed top-0 right-0 h-screen w-64 bg-white shadow-lg z-50 flex flex-col pt-20 px-6 gap-4"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
               transition={{ duration: 0.3 }}
             >
+              <button onClick={closeMenu} className="absolute top-6 right-6 text-amber-500">
+                <X size={32} />
+              </button>
               <NavLinks isMobile={true} closeMenu={closeMenu} />
             </motion.nav>
           )}

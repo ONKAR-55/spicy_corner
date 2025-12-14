@@ -11,6 +11,7 @@ import dishImage2 from './assets/DishImage/Pasta.jpg'
 import dishImage3 from './assets/DishImage/ChilliPotato.jpg'
 import dishImage4 from './assets/DishImage/DaalMakhni.jpg'
 import dishImage5 from './assets/DishImage/FrenchFries.jpg'
+import Menu from './Components/Menu.jsx'
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
 
       <Header />
       <Home />
-      <div className="list px-10 h-80 gap-5 border-2 border-amber-50/40 w-full mt-20 flex items-center snap-x overflow-auto scroll-smooth scroll-px-4 mb-20">
+      <div className="list px-4 md:px-10 h-auto md:h-96 gap-10 md:gap-20 border-2 border-amber-50/40 w-full mt-20 flex items-center snap-x overflow-auto scroll-smooth scroll-px-4 mb-20 py-6">
         <Dishs dishName={"Aloo Gobi"} dishImage={dishImage1} dishPrice={"160"}/>
         <Dishs dishName={"Pasta"} dishImage={dishImage2} dishPrice={"200"}/>
         <Dishs dishName={"Chilli Potato"} dishImage={dishImage3} dishPrice={"180"}/>
@@ -29,6 +30,7 @@ function App() {
       <About />
       <Contact />
       <Footer />
+      <Menu />
     
     </div>
   )
