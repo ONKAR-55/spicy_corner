@@ -5,13 +5,13 @@ import '../App.css'
 
 const NavItems = [
   { name: "Home", href: "#Home" },
-  { name: "Menu", href: "" },
+  { name: "Menu", onClick: "openMenu" },
   { name: "Reservation", href: "#Reservation" },
   { name: "About Us", href: "#About Us" },
   { name: "Contact Us", href: "#Contact Us" },
 ];
 
-function NavLinks({ isMobile, closeMenu }) {
+function NavLinks({ isMobile, closeMenu, openMenu }) {
   return (
     <>
       {NavItems.map((item, index) => (
@@ -28,8 +28,14 @@ function NavLinks({ isMobile, closeMenu }) {
             textDecorationColor: "#f59e0b",
           }}
           whileTap={{ scale: 0.9 }} 
-          className={ isMobile ? "block p-4 text-2xl text-amber-500 hover:text-amber-600" : "text-amber-400"}
-          onClick={isMobile ? closeMenu : undefined}
+          className={ isMobile ? "block p-4 text-2xl text-amber-500 hover:text-amber-600" : "text-amber-400 cursor-pointer hover:text-amber-600"}
+          onClick={(e) => {
+            if (item.name === "Menu") {
+              e.preventDefault();
+              if (openMenu) openMenu();
+            }
+            if (isMobile && closeMenu) closeMenu();
+          }}
         >
           {item.name}
         </motion.a>
@@ -38,7 +44,7 @@ function NavLinks({ isMobile, closeMenu }) {
   );
 }
 
-function Header() {
+function Header({ openMenu }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -90,7 +96,7 @@ function Header() {
 
         {/* Desktop Navigation */}
         <nav className="h-12 md:flex text-xl items-center text-center gap-5 ml-auto mr-0 hidden text-shadow-2xs text-shadow-amber-700 hover:text-shadow-none">
-          <NavLinks isMobile={false} />
+          <NavLinks isMobile={false} openMenu={openMenu} />
         </nav>
 
         {/* Order Button */}
@@ -129,7 +135,7 @@ function Header() {
               <button onClick={closeMenu} className="absolute top-6 right-6 text-amber-500">
                 <X size={32} />
               </button>
-              <NavLinks isMobile={true} closeMenu={closeMenu} />
+              <NavLinks isMobile={true} closeMenu={closeMenu} openMenu={openMenu} />
             </motion.nav>
           )}
         </AnimatePresence>

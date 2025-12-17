@@ -19,8 +19,10 @@ function App() {
   return (
     <div className="main-container">
 
-      <Header />
-      <Menu />
+      <Header  openMenu = {() => setIsMenuOpen(true)}/>
+      {isMenuOpen && (
+        <Menu closeMenu={() => setIsMenuOpen(false)} />
+      )}
       <Home />
       <div className="list px-4 md:px-10 h-auto md:h-96 gap-10 md:gap-20 border-2 border-amber-50/40 w-full mt-20 flex items-center snap-x overflow-auto scroll-smooth scroll-px-4 mb-20 py-6">
         <Dishs dishName={"Aloo Gobi"} dishImage={dishImage1} dishPrice={"160"}/>

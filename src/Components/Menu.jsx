@@ -6,12 +6,14 @@ import { useState } from 'react'
 import { X } from "lucide-react";
 
 
-function Menu() {
+function Menu({ closeMenu }) {
   const [activeCard, setActiveCard] = useState(0);
+  // const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className='fixed inset-0 z-40 bg-black/90 backdrop-blur-md overflow-y-auto'>
+    <div className={`inset-0 z-40 bg-black/90 backdrop-blur-md overflow-y-auto`}>
       <div className='relative w-full min-h-screen flex flex-col items-center py-12 px-4 md:px-8'>
-        <button className='top-4 left-4 z-50 hover:bg-amber-500/20 p-2 rounded-full active:scale-90 transition-all duration-300'>
+        <button className='top-4 left-4 z-50 hover:bg-amber-500/20 p-2 rounded-full active:scale-90 transition-all duration-300'
+          onClick={closeMenu}>
           <X className='text-orange-100 hover:text-orange-300 hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer active:rotate-90 hover:rotate-180' size={40} />
         </button>
 
