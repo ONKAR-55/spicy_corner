@@ -34,7 +34,7 @@ function CardTwo() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full py-12 bg-black text-orange-500 flex flex-col items-center justify-center">
+    <div className="w-full min-h-[60vh] h-auto py-12 bg-black/60 text-orange-500 flex flex-col items-center justify-center border-2 border-orange-500/20 rounded-xl">
        <motion.h1 
         className="text-4xl md:text-5xl font-bold mb-12 text-center drop-shadow-[0_1px_2px_rgba(255,255,255,0.3)]"
         initial={{ opacity: 0, y: -30 }}

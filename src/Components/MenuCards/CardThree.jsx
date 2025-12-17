@@ -18,7 +18,7 @@ const desserts = [
 
 function CardThree() {
   return (
-    <div className="w-full py-12 bg-orange-50 text-orange-900 flex flex-col items-center justify-center">
+    <div className="w-full min-h-[60vh] h-auto py-12 text-orange-900 flex flex-col items-center justify-center border-2 border-orange-200 bg-amber-50/90 rounded-xl">
       <motion.h1 
         className="text-4xl md:text-5xl font-bold mb-12 text-center text-orange-800 drop-shadow-sm"
         initial={{ opacity: 0, y: -30 }}
@@ -30,7 +30,7 @@ function CardThree() {
 
       <div className="w-full max-w-6xl px-6">
         <motion.div 
-          className="bg-white border border-orange-100 p-8 rounded-2xl shadow-xl shadow-orange-100/50"
+          className="bg-red-50 border-2 border-orange-100 p-8 rounded-2xl shadow-xl shadow-orange-100/50"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}

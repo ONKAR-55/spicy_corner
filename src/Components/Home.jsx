@@ -7,7 +7,7 @@ function Home() {
   return (
     <motion.section
       id="Home"
-      className="w-full min-h-screen md:h-auto px-4 sm:px-20 bg-transparent flex flex-col-reverse md:flex-row items-center justify-center ease-in-out gap-10 py-10"
+      className="w-full min-h-screen md:h-auto px-4 sm:px-20 bg-transparent flex flex-col-reverse md:flex-row items-center justify-center ease-in-out gap-10 py-10 z-10"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: -3 }}
       transition={{ duration: 0.8 }}

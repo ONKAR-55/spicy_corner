@@ -25,14 +25,14 @@ const coldDrinks = [
 
 function CardOne() {
   return (
-    <div className="w-full py-12 bg-black text-orange-500 flex flex-col items-center justify-center">
+    <div className="w-full min-h-[60vh] h-auto py-12 text-orange-500 flex flex-col items-center justify-center border-2 border-orange-500/20 bg-black/60 rounded-xl">
       <motion.h1 
         className="text-4xl md:text-5xl font-bold mb-12 text-center drop-shadow-[0_1px_2px_rgba(255,255,255,0.3)]"
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Beverages Menu
+        Drinks
       </motion.h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-6xl px-6">

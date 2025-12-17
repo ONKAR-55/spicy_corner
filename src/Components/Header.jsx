@@ -5,7 +5,7 @@ import '../App.css'
 
 const NavItems = [
   { name: "Home", href: "#Home" },
-  { name: "Menu", href: "#Menu" },
+  { name: "Menu", href: "" },
   { name: "Reservation", href: "#Reservation" },
   { name: "About Us", href: "#About Us" },
   { name: "Contact Us", href: "#Contact Us" },
