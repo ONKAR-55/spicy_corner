@@ -49,7 +49,11 @@ function CardOne() {
               <li key={index} className="flex justify-between items-end group">
                 <span className="text-xl font-medium text-orange-400 group-hover:text-orange-300 transition-colors">{item.name}</span>
                 <span className="flex-grow border-b border-dotted border-orange-700/60 mx-3 mb-1"></span>
-                <span className="text-2xl font-bold text-orange-500 group-hover:text-orange-400 transition-colors">₹{item.price}</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl font-bold text-orange-500 group-hover:text-orange-400 transition-colors">₹{item.price}</span>
+                  <button onClick={() => alert("Coming soon")} className="text-xs bg-orange-900/40 border border-orange-700/50 text-orange-300 px-2 py-1 rounded hover:bg-orange-800 transition-colors">List</button>
+                  <button onClick={() => alert("Coming soon")} className="text-xs bg-orange-600 text-black font-semibold px-2 py-1 rounded hover:bg-orange-500 transition-colors">Order</button>
+                </div>
               </li>
             ))}
           </ul>
@@ -68,7 +72,11 @@ function CardOne() {
               <li key={index} className="flex justify-between items-end group">
                 <span className="text-xl font-medium text-orange-400 group-hover:text-orange-300 transition-colors">{item.name}</span>
                 <span className="flex-grow border-b border-dotted border-orange-700/60 mx-3 mb-1"></span>
-                <span className="text-2xl font-bold text-orange-500 group-hover:text-orange-400 transition-colors">₹{item.price}</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl font-bold text-orange-500 group-hover:text-orange-400 transition-colors">₹{item.price}</span>
+                  <button onClick={() => alert("Coming soon")} className="text-xs bg-orange-900/40 border border-orange-700/50 text-orange-300 px-2 py-1 rounded hover:bg-orange-800 transition-colors">List</button>
+                  <button onClick={() => alert("Coming soon")} className="text-xs bg-orange-600 text-black font-semibold px-2 py-1 rounded hover:bg-orange-500 transition-colors">Order</button>
+                </div>
               </li>
             ))}
           </ul>

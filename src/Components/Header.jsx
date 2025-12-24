@@ -28,7 +28,7 @@ function NavLinks({ isMobile, closeMenu, openMenu }) {
             textDecorationColor: "#f59e0b",
           }}
           whileTap={{ scale: 0.9 }} 
-          className={ isMobile ? "block p-4 text-2xl text-amber-500 hover:text-amber-600" : "text-amber-400 cursor-pointer hover:text-amber-600"}
+          className={ isMobile ? "block p-4 text-2xl text-amber-500 hover:text-amber-600" : "text-amber-400 cursor-pointer"}
           onClick={(e) => {
             if (item.name === "Menu") {
               e.preventDefault();
@@ -101,13 +101,12 @@ function Header({ openMenu }) {
 
         {/* Order Button */}
         <motion.a
-          className="bg-amber-500 text-white hover:bg-amber-100 hover:text-amber-500 ease-in duration-200 p-4 hidden md:flex ml-auto mr-10 md:text-xl lg:text-2xl rounded-xl transform hover:scale-105"
+          className="bg-amber-500 text-white hover:bg-amber-100 hover:text-amber-500 ease-in duration-200 p-4 hidden md:flex ml-auto mr-10 md:text-xl lg:text-2xl rounded-xl transform hover:scale-105 cursor-pointer"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.3 }}
-          href="#orderForm"
         >
-          Order Now
+          Order List
         </motion.a>
 
         {/* Mobile Menu Button */}
